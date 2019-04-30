@@ -1,0 +1,11 @@
+{
+  "name": "kas-workshop-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mergeData.js",
+  "scripts": {
+    "build": "mkdir ./export && mkdir ./export/polls && node mergeData"
+  },
+  "author": "Till Prochaska <tillprochaska@gmail.com>",
+  "license": "ISC"
+}
