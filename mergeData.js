@@ -19,6 +19,12 @@ const merged = polls.map(poll => {
         vote
       };
     }
+
+    // For a few deputies, the party is included in the name
+    // property. Quick fix:
+    if(dep.name.indexOf(',')) {
+      dep.name = dep.name.substring(0, dep.name.indexOf(','));
+    }
     
     return {
       name: dep.name,
@@ -44,7 +50,7 @@ const indexJSON = merged.map((poll, index) => {
   };
 });
 
-fs.writeFileSync('./export/index.json', JSON.stringify(indexJSON));
+fs.writeFileSync('./export/polls/index.json', JSON.stringify(indexJSON));
 
 merged.forEach((poll, index) => {
   fs.writeFileSync(`./export/polls/${ index }.json`, JSON.stringify(poll));
