@@ -22,6 +22,8 @@ const merged = polls.map(poll => {
     
     return {
       name: dep.name,
+      party: dep.party,
+      image: dep.imgURL,
       constituency: dep.constituencyName,
       vote: vote
     };
