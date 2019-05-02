@@ -22,7 +22,7 @@ const merged = polls.map(poll => {
 
     // For a few deputies, the party is included in the name
     // property. Quick fix:
-    if(dep.name.indexOf(',')) {
+    if(dep.name.indexOf(',') > -1) {
       dep.name = dep.name.substring(0, dep.name.indexOf(','));
     }
     
